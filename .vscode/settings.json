@@ -1,0 +1,21 @@
+{
+    "clangd.arguments": [
+      "--background-index",
+      "--compile-commands-dir=${workspaceFolder}/build",
+      "--completion-style=detailed",
+      "--header-insertion=never"
+    ],
+    "terminal.integrated.profiles.windows": {
+    "PowerShell (ESP-IDF Init)": {
+      "source": "PowerShell",
+      "args": [
+        "-NoExit",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "$originalDir = (Get-Location).Path; cd $env:ADF_PATH; & '.\\export.ps1'; cd $originalDir"
+      ]
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell (ESP-IDF Init)"
+}
